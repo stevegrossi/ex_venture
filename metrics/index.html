@@ -13,6 +13,8 @@
         <meta name="description" content="A MUD built with Elixir">
       
       
+        <link rel="canonical" href="http://exventure.org/metrics/">
+      
       
         <meta name="author" content="Eric Oestrich">
       
@@ -31,22 +33,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.0.2">
     
     
       
-        <title>ExVenture</title>
+        <title>Metrics - ExVenture</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application-5b1b46901f.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-5b1b46901f.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/application-23f75ab9c7.palette.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-23f75ab9c7.palette.css">
       
     
     
-      <script src="/assets/javascripts/modernizr-e826f8942a.js"></script>
+      <script src="../assets/javascripts/modernizr-e826f8942a.js"></script>
     
     
       
@@ -94,7 +96,9 @@
         <span class="md-flex__ellipsis md-header-nav__title">
           
             
-            ExVenture
+              
+            
+            Metrics
           
         </span>
       </div>
@@ -204,7 +208,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/" title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -214,11 +218,54 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="/metrics/" title="Metrics" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Metrics
+      </label>
+    
+    <a href="./" title="Metrics" class="md-nav__link md-nav__link--active">
       Metrics
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" title="nginx" class="md-nav__link">
+    nginx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana" title="Grafana" class="md-nav__link">
+    Grafana
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -229,12 +276,76 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" title="nginx" class="md-nav__link">
+    nginx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana" title="Grafana" class="md-nav__link">
+    Grafana
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                  <a href="https://github.com/oestrich/ex_venture/edit/master/docs/metrics.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="metrics">Metrics</h1>
+<p>ExVenture publishes <a href="https://prometheus.io/">Prometheus</a> metrics at <code>/metrics</code>.</p>
+<h2 id="nginx">nginx</h2>
+<p>The metrics endpoint will be public to the internet unless it is specifically denied. Here is sample nginx config that allows a single private IP to view the metrics page:</p>
+<pre><code class="nginx">location /metrics {
+  set $metrics 1;
 
+  if ($remote_addr = 192.168.x.x) {
+    set $metrics 0;
+  }
+
+  if ($metrics) {
+    return 403;
+  }
+
+  proxy_pass   http://127.0.0.1:4000;
+}
+</code></pre>
+
+<h2 id="grafana">Grafana</h2>
+<p><img alt="Metrics" src="../images/metrics.png" /></p>
+<p>This is a sample Grafana dashboard showcasing the metrics that are available.</p>
+                
+                  
+                
+              
               
                 
               
@@ -245,6 +356,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -269,9 +401,9 @@
       
     </div>
     
-      <script src="/assets/javascripts/application-84693e5e49.js"></script>
+      <script src="../assets/javascripts/application-84693e5e49.js"></script>
       
-      <script>app.initialize({version:"0.17.1",url:{base:""}})</script>
+      <script>app.initialize({version:"0.17.1",url:{base:".."}})</script>
       
     
     
