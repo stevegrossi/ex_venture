@@ -1,0 +1,49 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "ExVenture\n\n\n\n\nA MUD written in Elixir\n\n\nSetup\n\n\nmix deps.get\nmix compile\ncd assets \n npm install \n node node_modules/brunch/bin/brunch build \n cd ..\nmix ecto.reset\nmix run --no-halt\n\n\n\n\nThis will start a server on port 5555 that you can connect with using the \nlocal.tin\n tintin++ config. Ecto reset will include a sample area, classes, skills, and a login. You can also load \nhttp://localhost:4000/\n in your browser for the admin panel and web client.\n\n\nRunning Tests\n\n\nMIX_ENV=test mix ecto.create\nMIX_ENV=test mix ecto.migrate\n\n\n\n\nAdmin Panel\n\n\nThere is an admin panel located at \nhttp://locahost:4000/admin\n that you can build out the game in. Create zones, rooms, npcs, items, etc. in the panel. They will become live instantly on creating or updating.\n\n\n\n\nDeployment\n\n\nDistillery is used to generate releases. Once a release is generated you can copy the tar file to the server and start it up.\n\n\ncd assets \n node node_modules/brunch/bin/brunch build \n cd ..\nMIX_ENV=prod mix compile\nMIX_ENV=prod mix phx.digest\nMIX_ENV=prod mix release\n\n\n\n\nThe \nrelease.sh\n script will also do the same.\n\n\nTLS\n\n\nThe game does not support TLS natively, but you can get nginx to serve as a termination point and forward locally to the app. Nginx needs to be built with two modules, \nstream_core\n and \nstream_ssl\n. You will also need to set the \nssl_port\n option in networking. By default it will load from the \nSSL_PORT\n ENV variable.\n\n\nstream {\n  upstream exventure {\n    server 127.0.0.1:5555;\n  }\n\n  server {\n    listen 5443 ssl;\n\n    # Copy in your main site's settings here\n    ssl_certificate /path/to/file.pem\n    ssl_certificate_key /path/to/file.key\n\n    proxy_pass exventure;\n  }\n}\n\n\n\n\nMetrics\n\n\nPrometheus metrics are set up and will be reported on \n/metrics\n. You may want to have nginx deny requests to this endpoint or whitelist it for IPs, etc.\n\n\nDocumentation\n\n\nYou can get elixir docs by running \nmix docs\n and open \ndoc/index.html\n. The code base has a lot of doctests to help give examples of how to use the functions.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#exventure", 
+            "text": "A MUD written in Elixir", 
+            "title": "ExVenture"
+        }, 
+        {
+            "location": "/#setup", 
+            "text": "mix deps.get\nmix compile\ncd assets   npm install   node node_modules/brunch/bin/brunch build   cd ..\nmix ecto.reset\nmix run --no-halt  This will start a server on port 5555 that you can connect with using the  local.tin  tintin++ config. Ecto reset will include a sample area, classes, skills, and a login. You can also load  http://localhost:4000/  in your browser for the admin panel and web client.", 
+            "title": "Setup"
+        }, 
+        {
+            "location": "/#running-tests", 
+            "text": "MIX_ENV=test mix ecto.create\nMIX_ENV=test mix ecto.migrate", 
+            "title": "Running Tests"
+        }, 
+        {
+            "location": "/#admin-panel", 
+            "text": "There is an admin panel located at  http://locahost:4000/admin  that you can build out the game in. Create zones, rooms, npcs, items, etc. in the panel. They will become live instantly on creating or updating.", 
+            "title": "Admin Panel"
+        }, 
+        {
+            "location": "/#deployment", 
+            "text": "Distillery is used to generate releases. Once a release is generated you can copy the tar file to the server and start it up.  cd assets   node node_modules/brunch/bin/brunch build   cd ..\nMIX_ENV=prod mix compile\nMIX_ENV=prod mix phx.digest\nMIX_ENV=prod mix release  The  release.sh  script will also do the same.", 
+            "title": "Deployment"
+        }, 
+        {
+            "location": "/#tls", 
+            "text": "The game does not support TLS natively, but you can get nginx to serve as a termination point and forward locally to the app. Nginx needs to be built with two modules,  stream_core  and  stream_ssl . You will also need to set the  ssl_port  option in networking. By default it will load from the  SSL_PORT  ENV variable.  stream {\n  upstream exventure {\n    server 127.0.0.1:5555;\n  }\n\n  server {\n    listen 5443 ssl;\n\n    # Copy in your main site's settings here\n    ssl_certificate /path/to/file.pem\n    ssl_certificate_key /path/to/file.key\n\n    proxy_pass exventure;\n  }\n}", 
+            "title": "TLS"
+        }, 
+        {
+            "location": "/#metrics", 
+            "text": "Prometheus metrics are set up and will be reported on  /metrics . You may want to have nginx deny requests to this endpoint or whitelist it for IPs, etc.", 
+            "title": "Metrics"
+        }, 
+        {
+            "location": "/#documentation", 
+            "text": "You can get elixir docs by running  mix docs  and open  doc/index.html . The code base has a lot of doctests to help give examples of how to use the functions.", 
+            "title": "Documentation"
+        }
+    ]
+}
