@@ -1,0 +1,514 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.16.2">
+    <title>Game.Session.GMCP – ex_venture v0.15.0</title>
+    <link rel="stylesheet" href="dist/app-268c9dc719.css" />
+    
+    <script src="dist/sidebar_items-684dd0e0b3.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="readme.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        ex_venture
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.15.0
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <span class="icon-search" aria-hidden="true"></span>
+    <input type="text" class="sidebar-searchInput" placeholder="search" aria-label="Search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">ex_venture v0.15.0</small>
+        Game.Session.GMCP
+        
+          <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>Helpers for pushing GMCP data</p>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#character/1">character(map)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Push Character data (save stats)</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#character_enter/1">character_enter(arg)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A character enters a room</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#character_leave/1">character_leave(arg)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>A character leaves a room</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#clear_target/1">clear_target(map)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Send a target cleared message</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#map/2">map(map, map)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Send a map message</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#npc_info/1">npc_info(npc)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Gather information for a npc</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#room/2">room(map, room)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Push Room.Info data</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#targeted/2">targeted(map, arg)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Send the player’s target info</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#user_info/1">user_info(user)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Gather information for a user</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#vitals/1">vitals(map)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Push Character.Vitals data (save stats)</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="character/1">
+  
+  <div class="detail-header">
+    <a href="#character/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">character(map)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L14" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>character(state :: map) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Push Character data (save stats)</p>
+
+  </section>
+</div>
+<div class="detail" id="character_enter/1">
+  
+  <div class="detail-header">
+    <a href="#character_enter/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">character_enter(arg)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>character_enter({:user, map} | {:npc, map}) :: {module :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>, data :: map}</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>A character enters a room</p>
+<p>Does not push directly to the socket</p>
+
+  </section>
+</div>
+<div class="detail" id="character_leave/1">
+  
+  <div class="detail-header">
+    <a href="#character_leave/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">character_leave(arg)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L59" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>character_leave({:user, map} | {:npc, map}) :: {module :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>, data :: map}</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>A character leaves a room</p>
+<p>Does not push directly to the socket</p>
+
+  </section>
+</div>
+<div class="detail" id="clear_target/1">
+  
+  <div class="detail-header">
+    <a href="#clear_target/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">clear_target(map)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L78" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>clear_target(state :: map) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Send a target cleared message</p>
+
+  </section>
+</div>
+<div class="detail" id="map/2">
+  
+  <div class="detail-header">
+    <a href="#map/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">map(map, map)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L86" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>map(state :: map, map :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Send a map message</p>
+
+  </section>
+</div>
+<div class="detail" id="npc_info/1">
+  
+  <div class="detail-header">
+    <a href="#npc_info/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">npc_info(npc)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>npc_info(NPC.t) :: map</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Gather information for a npc</p>
+
+  </section>
+</div>
+<div class="detail" id="room/2">
+  
+  <div class="detail-header">
+    <a href="#room/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">room(map, room)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L33" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>room(state :: map, room :: <a href="Data.Room.html#t:t/0">Data.Room.t</a>) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Push Room.Info data</p>
+
+  </section>
+</div>
+<div class="detail" id="targeted/2">
+  
+  <div class="detail-header">
+    <a href="#targeted/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">targeted(map, arg)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L70" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>targeted(state :: map, {:user, map} | {:npc, map}) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Send the player’s target info</p>
+
+  </section>
+</div>
+<div class="detail" id="user_info/1">
+  
+  <div class="detail-header">
+    <a href="#user_info/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">user_info(user)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L106" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>user_info(User.t) :: map</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Gather information for a user</p>
+
+  </section>
+</div>
+<div class="detail" id="vitals/1">
+  
+  <div class="detail-header">
+    <a href="#vitals/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">vitals(map)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/session/gmcp.ex#L22" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>vitals(state :: map) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Push Character.Vitals data (save stats)</p>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-4988ddd06b.js"></script>
+  </body>
+</html>
+

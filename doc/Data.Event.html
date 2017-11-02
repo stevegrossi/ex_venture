@@ -1,0 +1,434 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.16.2">
+    <title>Data.Event – ex_venture v0.15.0</title>
+    <link rel="stylesheet" href="dist/app-268c9dc719.css" />
+    
+    <script src="dist/sidebar_items-684dd0e0b3.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="readme.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        ex_venture
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.15.0
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <span class="icon-search" aria-hidden="true"></span>
+    <input type="text" class="sidebar-searchInput" placeholder="search" aria-label="Search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">ex_venture v0.15.0</small>
+        Data.Event
+        
+          <a href="https://github.com/oestrich/ex_venture/blob/master/lib/data/event.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>In game events that NPCs will be listening for</p>
+<p>Valid kinds of events:</p>
+<ul>
+<li>“room/entered”: When a character enters a room
+</li>
+</ul>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:t/0">t()</a>
+  </div>
+  
+</div>
+
+  </div>
+
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#load/1">load(event)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Load an event from a stored map</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#starting_event/1">starting_event(binary)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Get a starting event, to fill out in the web interface. Just the structure,
+the values won’t mean anyhting</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#valid?/1">valid?(event)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Validate an event based on type</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#valid_action?/1">valid_action?(arg1)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Validate the action matches the type</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#valid_arguments?/1">valid_arguments?(arg1)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Validate the arguments matches the action</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#validate_events/1">validate_events(changeset)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Validate events of the NPC</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+        <section id="types" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#types">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Types
+          </h1>
+          <div class="types-list">
+            <div class="detail" id="t:t/0">
+  
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <span class="signature">t()</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/data/event.ex#L13" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>t() :: map</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+
+          </div>
+        </section>
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="load/1">
+  
+  <div class="detail-header">
+    <a href="#load/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">load(event)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/data/event.ex#L33" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Load an event from a stored map</p>
+<p>Cast it properly</p>
+<pre><code class="iex elixir">iex&gt; Data.Event.load(%{&quot;type&quot; =&gt; &quot;room/entered&quot;, &quot;action&quot; =&gt; &quot;say&quot;, &quot;arguments&quot; =&gt; [&quot;Welcome!&quot;]})
+{:ok, %{type: &quot;room/entered&quot;, action: &quot;say&quot;, arguments: [&quot;Welcome!&quot;]}}</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="starting_event/1">
+  
+  <div class="detail-header">
+    <a href="#starting_event/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">starting_event(binary)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/data/event.ex#L50" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>starting_event(type :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>) :: <a href="#t:t/0">t</a></pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Get a starting event, to fill out in the web interface. Just the structure,
+the values won’t mean anyhting.</p>
+
+  </section>
+</div>
+<div class="detail" id="valid?/1">
+  
+  <div class="detail-header">
+    <a href="#valid?/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">valid?(event)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/data/event.ex#L81" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>valid?(event :: <a href="#t:t/0">t</a>) :: boolean</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Validate an event based on type</p>
+<pre><code class="iex elixir">iex&gt; Data.Event.valid?(%{type: &quot;room/entered&quot;, action: &quot;say&quot;, arguments: &quot;hi&quot;})
+true
+iex&gt; Data.Event.valid?(%{type: &quot;room/entered&quot;, action: &quot;say&quot;, arguments: :invalid})
+false
+
+iex&gt; Data.Event.valid?(%{type: &quot;room/heard&quot;, condition: &quot;hello&quot;, action: &quot;say&quot;, arguments: &quot;hi&quot;})
+true
+iex&gt; Data.Event.valid?(%{type: &quot;room/heard&quot;, condition: nil, action: &quot;say&quot;, arguments: &quot;hi&quot;})
+false
+iex&gt; Data.Event.valid?(%{type: &quot;room/heard&quot;, action: &quot;say&quot;, arguments: :invalid})
+false</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="valid_action?/1">
+  
+  <div class="detail-header">
+    <a href="#valid_action?/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">valid_action?(arg1)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/data/event.ex#L98" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Validate the action matches the type</p>
+<pre><code class="iex elixir">iex&gt; Data.Event.valid_action?(%{type: &quot;room/entered&quot;, action: &quot;say&quot;})
+true
+iex&gt; Data.Event.valid_action?(%{type: &quot;room/entered&quot;, action: &quot;leave&quot;})
+false
+
+iex&gt; Data.Event.valid_action?(%{type: &quot;room/heard&quot;, action: &quot;say&quot;})
+true
+iex&gt; Data.Event.valid_action?(%{type: &quot;room/heard&quot;, action: &quot;leave&quot;})
+false</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="valid_arguments?/1">
+  
+  <div class="detail-header">
+    <a href="#valid_arguments?/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">valid_arguments?(arg1)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/data/event.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Validate the arguments matches the action</p>
+<pre><code class="iex elixir">iex&gt; Data.Event.valid_arguments?(%{action: &quot;say&quot;, arguments: &quot;hi&quot;})
+true
+
+iex&gt; Data.Event.valid_arguments?(%{action: &quot;leave&quot;, arguments: :invalid})
+false</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="validate_events/1">
+  
+  <div class="detail-header">
+    <a href="#validate_events/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">validate_events(changeset)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/data/event.ex#L116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>validate_events(changeset :: <a href="https://hexdocs.pm/ecto/2.1.6/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>) :: <a href="https://hexdocs.pm/ecto/2.1.6/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a></pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Validate events of the NPC</p>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-4988ddd06b.js"></script>
+  </body>
+</html>
+

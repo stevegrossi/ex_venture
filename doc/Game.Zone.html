@@ -1,0 +1,727 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.16.2">
+    <title>Game.Zone – ex_venture v0.15.0</title>
+    <link rel="stylesheet" href="dist/app-268c9dc719.css" />
+    
+    <script src="dist/sidebar_items-684dd0e0b3.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="readme.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        ex_venture
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.15.0
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <span class="icon-search" aria-hidden="true"></span>
+    <input type="text" class="sidebar-searchInput" placeholder="search" aria-label="Search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">ex_venture v0.15.0</small>
+        Game.Zone
+        
+          <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>Supervisor for Rooms</p>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:t/0">t()</a>
+  </div>
+  
+</div>
+
+  </div>
+
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#_get_state/1">_get_state(id)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>For testing purposes, get the server’s state</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#all/0">all()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Return all zones</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#map/3">map(id, player_at, opts \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Display a map of the zone</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#npc_online/2">npc_online(id, npc)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Let the zone know a npc is online</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#npc_supervisor/2">npc_supervisor(id, supervisor_pid)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Tell the zone where the npc supervisor lives</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#room_online/2">room_online(id, room)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Let the zone know a room is online</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#room_supervisor/2">room_supervisor(id, supervisor_pid)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Tell the zone where the room supervisor lives</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#shop_supervisor/2">shop_supervisor(id, supervisor_pid)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Tell the zone where the shop supervisor lives</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#spawn_npc/2">spawn_npc(id, npc_spawner)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Start a new npc in the supervision tree</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#spawn_room/2">spawn_room(id, room)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Start a new room in the supervision tree</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#spawn_shop/2">spawn_shop(id, shop)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Start a new shop in the supervision tree</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_link/1">start_link(zone)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tick/2">tick(pid, time)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Send a tick to the zone</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update/2">update(id, zone)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Update a zone definition in the server state</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_room/2">update_room(id, room)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Update a room’s definition in the state</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+        <section id="types" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#types">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Types
+          </h1>
+          <div class="types-list">
+            <div class="detail" id="t:t/0">
+  
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <span class="signature">t()</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L6" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>t() :: %{name: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>}</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+
+          </div>
+        </section>
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="_get_state/1">
+  
+  <div class="detail-header">
+    <a href="#_get_state/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">_get_state(id)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L148" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>For testing purposes, get the server’s state</p>
+
+  </section>
+</div>
+<div class="detail" id="all/0">
+  
+  <div class="detail-header">
+    <a href="#all/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">all()</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L37" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>all() :: [map]</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Return all zones</p>
+
+  </section>
+</div>
+<div class="detail" id="map/3">
+  
+    <span id="map/2"></span>
+  
+  <div class="detail-header">
+    <a href="#map/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">map(id, player_at, opts \\ [])</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L141" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>map(id :: integer, player_at :: {integer, integer}, opts :: <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>) :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a></pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Display a map of the zone</p>
+
+  </section>
+</div>
+<div class="detail" id="npc_online/2">
+  
+  <div class="detail-header">
+    <a href="#npc_online/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">npc_online(id, npc)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L67" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Let the zone know a npc is online</p>
+<p>For sending ticks to</p>
+
+  </section>
+</div>
+<div class="detail" id="npc_supervisor/2">
+  
+  <div class="detail-header">
+    <a href="#npc_supervisor/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">npc_supervisor(id, supervisor_pid)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L91" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>npc_supervisor(id :: integer, supervisor_pid :: pid) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Tell the zone where the npc supervisor lives</p>
+
+  </section>
+</div>
+<div class="detail" id="room_online/2">
+  
+  <div class="detail-header">
+    <a href="#room_online/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">room_online(id, room)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L58" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Let the zone know a room is online</p>
+<p>For sending ticks to</p>
+
+  </section>
+</div>
+<div class="detail" id="room_supervisor/2">
+  
+  <div class="detail-header">
+    <a href="#room_supervisor/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">room_supervisor(id, supervisor_pid)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L83" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>room_supervisor(id :: integer, supervisor_pid :: pid) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Tell the zone where the room supervisor lives</p>
+
+  </section>
+</div>
+<div class="detail" id="shop_supervisor/2">
+  
+  <div class="detail-header">
+    <a href="#shop_supervisor/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">shop_supervisor(id, supervisor_pid)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L99" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>shop_supervisor(id :: integer, supervisor_pid :: pid) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Tell the zone where the shop supervisor lives</p>
+
+  </section>
+</div>
+<div class="detail" id="spawn_npc/2">
+  
+  <div class="detail-header">
+    <a href="#spawn_npc/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">spawn_npc(id, npc_spawner)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L115" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>spawn_npc(id :: integer, npc_spawner :: <a href="Data.Room.html#t:t/0">Data.Room.t</a>) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Start a new npc in the supervision tree</p>
+
+  </section>
+</div>
+<div class="detail" id="spawn_room/2">
+  
+  <div class="detail-header">
+    <a href="#spawn_room/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">spawn_room(id, room)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L107" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>spawn_room(id :: integer, room :: <a href="Data.Room.html#t:t/0">Data.Room.t</a>) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Start a new room in the supervision tree</p>
+
+  </section>
+</div>
+<div class="detail" id="spawn_shop/2">
+  
+  <div class="detail-header">
+    <a href="#spawn_shop/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">spawn_shop(id, shop)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L123" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>spawn_shop(id :: integer, shop :: <a href="Data.Shop.html#t:t/0">Data.Shop.t</a>) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Start a new shop in the supervision tree</p>
+
+  </section>
+</div>
+<div class="detail" id="start_link/1">
+  
+  <div class="detail-header">
+    <a href="#start_link/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">start_link(zone)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L25" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+<div class="detail" id="tick/2">
+  
+  <div class="detail-header">
+    <a href="#tick/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">tick(pid, time)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L49" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>tick(pid, time :: <a href="https://hexdocs.pm/elixir/DateTime.html#t:t/0">DateTime.t</a>) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Send a tick to the zone</p>
+
+  </section>
+</div>
+<div class="detail" id="update/2">
+  
+  <div class="detail-header">
+    <a href="#update/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">update(id, zone)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L75" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>update(id :: integer, zone :: Zone.t) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Update a zone definition in the server state</p>
+
+  </section>
+</div>
+<div class="detail" id="update_room/2">
+  
+  <div class="detail-header">
+    <a href="#update_room/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">update_room(id, room)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/zone.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>update_room(id :: integer, room :: <a href="Game.Room.html#t:t/0">Game.Room.t</a>) :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Update a room’s definition in the state</p>
+<p>For making sure mapping data stays correct on updates</p>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-4988ddd06b.js"></script>
+  </body>
+</html>
+

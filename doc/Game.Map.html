@@ -1,0 +1,581 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.16.2">
+    <title>Game.Map – ex_venture v0.15.0</title>
+    <link rel="stylesheet" href="dist/app-268c9dc719.css" />
+    
+    <script src="dist/sidebar_items-684dd0e0b3.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="readme.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        ex_venture
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.15.0
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <span class="icon-search" aria-hidden="true"></span>
+    <input type="text" class="sidebar-searchInput" placeholder="search" aria-label="Search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">ex_venture v0.15.0</small>
+        Game.Map
+        
+          <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>Map out a zone</p>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#display_map/3">display_map(zone, arg, opts \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Generate a text view of the zone</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#display_room/2">display_room(arg, coords)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Determine what the room looks like with it’s walls</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#join_line/2">join_line(last_line, new_line)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Join a line together, zipping each point</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#join_point/2">join_point(point, point)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Join a point in the map together</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#join_rooms/1">join_rooms(rows)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Join map together</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#join_row/2">join_row(room, row)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Join an individual row of rooms together</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#join_rows/2">join_rows(row, rows)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Join each row of rooms together</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#layers_in_map/1">layers_in_map(zone)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Determine which layers are in a map</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#map/2">map(zone, opts \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Generate a sorted list of lists for a zone map</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#mini_map/3">mini_map(zone, arg2, bool)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Create a mini map of the whole zone. Restricts to with in 2 spaces of the player</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#room_color/1">room_color(room)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Determine the color of the room in the map</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#size_of_map/2">size_of_map(zone, opts \\ [layer: 1])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Find the coordinates for each room in a zone and the size of the zone</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="display_map/3">
+  
+    <span id="display_map/2"></span>
+  
+  <div class="detail-header">
+    <a href="#display_map/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">display_map(zone, arg, opts \\ [])</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L73" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>display_map(zone :: Zone.t, {x :: integer, y :: integer, layer :: integer}, opts :: <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>) :: [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>]</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Generate a text view of the zone</p>
+
+  </section>
+</div>
+<div class="detail" id="display_room/2">
+  
+  <div class="detail-header">
+    <a href="#display_room/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">display_room(arg, coords)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L115" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Determine what the room looks like with it’s walls</p>
+
+  </section>
+</div>
+<div class="detail" id="join_line/2">
+  
+  <div class="detail-header">
+    <a href="#join_line/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">join_line(last_line, new_line)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L206" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Join a line together, zipping each point</p>
+
+  </section>
+</div>
+<div class="detail" id="join_point/2">
+  
+  <div class="detail-header">
+    <a href="#join_point/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">join_point(point, point)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L244" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>join_point(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>) :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a></pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Join a point in the map together</p>
+<pre><code class="iex elixir">iex&gt; Game.Map.join_point(&quot; &quot;, &quot; &quot;)
+&quot; &quot;
+iex&gt; Game.Map.join_point(&quot;|&quot;, &quot;+&quot;)
+&quot;+&quot;
+
+iex&gt; Game.Map.join_point(&quot; &quot;, &quot;+&quot;)
+&quot;+&quot;
+iex&gt; Game.Map.join_point(&quot;+&quot;, &quot; &quot;)
+&quot;+&quot;
+
+iex&gt; Game.Map.join_point(&quot; &quot;, &quot;-&quot;)
+&quot;-&quot;
+iex&gt; Game.Map.join_point(&quot;-&quot;, &quot; &quot;)
+&quot;-&quot;
+
+iex&gt; Game.Map.join_point(&quot;|&quot;, &quot; &quot;)
+&quot;|&quot;
+iex&gt; Game.Map.join_point(&quot;|&quot;, &quot; &quot;)
+&quot;|&quot;</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="join_rooms/1">
+  
+  <div class="detail-header">
+    <a href="#join_rooms/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">join_rooms(rows)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L162" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Join map together</p>
+<p>The map is a list of rows of rooms, each room row is 3 lines</p>
+
+  </section>
+</div>
+<div class="detail" id="join_row/2">
+  
+  <div class="detail-header">
+    <a href="#join_row/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">join_row(room, row)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L174" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Join an individual row of rooms together</p>
+
+  </section>
+</div>
+<div class="detail" id="join_rows/2">
+  
+  <div class="detail-header">
+    <a href="#join_rows/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">join_rows(row, rows)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L195" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Join each row of rooms together</p>
+<p>Each row of rooms are 3 lines long. The first line of the newly added row
+will be joined against the last row of the set.</p>
+
+  </section>
+</div>
+<div class="detail" id="layers_in_map/1">
+  
+  <div class="detail-header">
+    <a href="#layers_in_map/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">layers_in_map(zone)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L63" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>layers_in_map(zone :: Zone.t) :: [integer]</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Determine which layers are in a map</p>
+
+  </section>
+</div>
+<div class="detail" id="map/2">
+  
+    <span id="map/1"></span>
+  
+  <div class="detail-header">
+    <a href="#map/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">map(zone, opts \\ [])</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Generate a sorted list of lists for a zone map</p>
+
+  </section>
+</div>
+<div class="detail" id="mini_map/3">
+  
+  <div class="detail-header">
+    <a href="#mini_map/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">mini_map(zone, arg2, bool)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>mini_map(zone :: [], {integer, integer}, opts :: <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>) :: []</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Create a mini map of the whole zone. Restricts to with in 2 spaces of the player</p>
+
+  </section>
+</div>
+<div class="detail" id="room_color/1">
+  
+  <div class="detail-header">
+    <a href="#room_color/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">room_color(room)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L265" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>room_color(room :: Room.t) :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a></pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Determine the color of the room in the map</p>
+<pre><code class="iex elixir">iex&gt; Game.Map.room_color(%{ecology: &quot;default&quot;})
+nil</code></pre>
+
+  </section>
+</div>
+<div class="detail" id="size_of_map/2">
+  
+    <span id="size_of_map/1"></span>
+  
+  <div class="detail-header">
+    <a href="#size_of_map/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">size_of_map(zone, opts \\ [layer: 1])</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/game/map.ex#L18" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>size_of_map(zone :: Zone.t, layer :: integer) :: {{min_x :: integer, min_y :: integer}, {max_x :: integer, max_y :: integer}, [{{x :: integer, y :: integer}, Room.t}]}</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Find the coordinates for each room in a zone and the size of the zone</p>
+<p>1,1 is top left</p>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-4988ddd06b.js"></script>
+  </body>
+</html>
+

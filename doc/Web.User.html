@@ -1,0 +1,434 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.16.2">
+    <title>Web.User – ex_venture v0.15.0</title>
+    <link rel="stylesheet" href="dist/app-268c9dc719.css" />
+    
+    <script src="dist/sidebar_items-684dd0e0b3.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<section class="sidebar">
+
+  
+  <a href="readme.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        ex_venture
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.15.0
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <span class="icon-search" aria-hidden="true"></span>
+    <input type="text" class="sidebar-searchInput" placeholder="search" aria-label="Search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">ex_venture v0.15.0</small>
+        Web.User
+        
+          <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>Bounded context for the Phoenix app talking to the data layer</p>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#all/1">all(opts \\ [])</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Load all users</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#change_password/3">change_password(user, current_password, params)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Change a user’s password</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#connected_players/0">connected_players()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>List out connected players</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disconnect/0">disconnect()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Disconnect players</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#from_token/1">from_token(token)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Fetch a user from a web token</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get/1">get(id)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Load a user</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#teleport/2">teleport(user, room_id)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Teleport a user to the room</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#teleport_player_in_game/2">teleport_player_in_game(user, room_id)</a>
+  </div>
+  
+</div>
+
+  </div>
+
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="all/1">
+  
+    <span id="all/0"></span>
+  
+  <div class="detail-header">
+    <a href="#all/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">all(opts \\ [])</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L29" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>all(opts :: <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>) :: [<a href="Data.User.html#t:t/0">Data.User.t</a>]</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Load all users</p>
+
+  </section>
+</div>
+<div class="detail" id="change_password/3">
+  
+  <div class="detail-header">
+    <a href="#change_password/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">change_password(user, current_password, params)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L87" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>change_password(user :: <a href="Data.User.html#t:t/0">Data.User.t</a>, current_password :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>, params :: map) :: {:ok, <a href="Data.User.html#t:t/0">Data.User.t</a>}</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Change a user’s password</p>
+
+  </section>
+</div>
+<div class="detail" id="connected_players/0">
+  
+  <div class="detail-header">
+    <a href="#connected_players/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">connected_players()</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L49" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>connected_players() :: [<a href="Data.User.html#t:t/0">Data.User.t</a>]</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>List out connected players</p>
+
+  </section>
+</div>
+<div class="detail" id="disconnect/0">
+  
+  <div class="detail-header">
+    <a href="#disconnect/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">disconnect()</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>disconnect() :: :ok</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Disconnect players</p>
+<p>The server will shutdown shortly.</p>
+
+  </section>
+</div>
+<div class="detail" id="from_token/1">
+  
+  <div class="detail-header">
+    <a href="#from_token/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">from_token(token)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L19" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>from_token(token :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>) :: <a href="Data.User.html#t:t/0">Data.User.t</a></pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Fetch a user from a web token</p>
+
+  </section>
+</div>
+<div class="detail" id="get/1">
+  
+  <div class="detail-header">
+    <a href="#get/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get(id)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L39" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>get(id :: integer) :: <a href="Data.User.html#t:t/0">Data.User.t</a></pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Load a user</p>
+
+  </section>
+</div>
+<div class="detail" id="teleport/2">
+  
+  <div class="detail-header">
+    <a href="#teleport/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">teleport(user, room_id)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L60" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+      <div class="specs">
+        
+          <pre>teleport(user :: <a href="Data.User.html#t:t/0">Data.User.t</a>, room_id :: integer) ::
+  {:ok, <a href="Data.User.html#t:t/0">Data.User.t</a>} |
+  {:error, map}</pre>
+        
+      </div>
+    
+  </div>
+  <section class="docstring">
+    <p>Teleport a user to the room</p>
+<p>Updates the save and sends a message to their session</p>
+
+  </section>
+</div>
+<div class="detail" id="teleport_player_in_game/2">
+  
+  <div class="detail-header">
+    <a href="#teleport_player_in_game/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">teleport_player_in_game(user, room_id)</span>
+    
+      <a href="https://github.com/oestrich/ex_venture/blob/master/lib/web/user.ex#L73" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    
+  </section>
+</div>
+
+        </section>
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.16.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle"><span class="sr-only">Switch theme</span></button>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-4988ddd06b.js"></script>
+  </body>
+</html>
+
