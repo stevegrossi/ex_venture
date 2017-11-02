@@ -13,7 +13,7 @@
         <meta name="description" content="A MUD built with Elixir">
       
       
-        <link rel="canonical" href="http://exventure.org/">
+        <link rel="canonical" href="http://exventure.org/setup/">
       
       
         <meta name="author" content="Eric Oestrich">
@@ -33,22 +33,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="./assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.0.2">
     
     
       
-        <title>ExVenture</title>
+        <title>Setup - ExVenture</title>
       
     
     
-      <link rel="stylesheet" href="./assets/stylesheets/application-5b1b46901f.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-5b1b46901f.css">
       
-        <link rel="stylesheet" href="./assets/stylesheets/application-23f75ab9c7.palette.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-23f75ab9c7.palette.css">
       
     
     
-      <script src="./assets/javascripts/modernizr-e826f8942a.js"></script>
+      <script src="../assets/javascripts/modernizr-e826f8942a.js"></script>
     
     
       
@@ -98,7 +98,7 @@
             
               
             
-            Home
+            Setup
           
         </span>
       </div>
@@ -206,6 +206,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -217,11 +229,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Home
+        Setup
       </label>
     
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
-      Home
+    <a href="./" title="Setup" class="md-nav__link md-nav__link--active">
+      Setup
     </a>
     
       
@@ -239,40 +251,46 @@
     Requirements
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup" title="Setup" class="md-nav__link">
-    Setup
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" title="Git" class="md-nav__link">
+    Git
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#running-tests" title="Running Tests" class="md-nav__link">
-    Running Tests
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#admin-panel" title="Admin Panel" class="md-nav__link">
-    Admin Panel
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" title="Deployment" class="md-nav__link">
-    Deployment
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" title="PostgreSQL" class="md-nav__link">
+    PostgreSQL
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tls" title="TLS" class="md-nav__link">
-    TLS
+  <a href="#postgresql-authentication" title="PostgreSQL Authentication" class="md-nav__link">
+    PostgreSQL Authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixir-erlang" title="Elixir / Erlang" class="md-nav__link">
+    Elixir / Erlang
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" title="node.js" class="md-nav__link">
+    node.js
   </a>
   
 </li>
@@ -283,16 +301,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#metrics" title="Metrics" class="md-nav__link">
-    Metrics
+  <a href="#exventure" title="ExVenture" class="md-nav__link">
+    ExVenture
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tests" title="Tests" class="md-nav__link">
+    Tests
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" title="Documentation" class="md-nav__link">
-    Documentation
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -302,18 +326,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="setup/" title="Setup" class="md-nav__link">
-      Setup
-    </a>
   </li>
 
     
@@ -342,7 +354,7 @@
 
 
   <li class="md-nav__item">
-    <a href="admin/" title="Overview" class="md-nav__link">
+    <a href="../admin/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -359,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="metrics/" title="Metrics" class="md-nav__link">
+    <a href="../metrics/" title="Metrics" class="md-nav__link">
       Metrics
     </a>
   </li>
@@ -390,40 +402,46 @@
     Requirements
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup" title="Setup" class="md-nav__link">
-    Setup
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" title="Git" class="md-nav__link">
+    Git
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#running-tests" title="Running Tests" class="md-nav__link">
-    Running Tests
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#admin-panel" title="Admin Panel" class="md-nav__link">
-    Admin Panel
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" title="Deployment" class="md-nav__link">
-    Deployment
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" title="PostgreSQL" class="md-nav__link">
+    PostgreSQL
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tls" title="TLS" class="md-nav__link">
-    TLS
+  <a href="#postgresql-authentication" title="PostgreSQL Authentication" class="md-nav__link">
+    PostgreSQL Authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elixir-erlang" title="Elixir / Erlang" class="md-nav__link">
+    Elixir / Erlang
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" title="node.js" class="md-nav__link">
+    node.js
   </a>
   
 </li>
@@ -434,16 +452,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#metrics" title="Metrics" class="md-nav__link">
-    Metrics
+  <a href="#exventure" title="ExVenture" class="md-nav__link">
+    ExVenture
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tests" title="Tests" class="md-nav__link">
+    Tests
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" title="Documentation" class="md-nav__link">
-    Documentation
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -461,68 +485,113 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/oestrich/ex_venture/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/oestrich/ex_venture/edit/master/docs/setup.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="exventure">ExVenture</h1>
-<p><a href="https://travis-ci.org/oestrich/ex_venture"><img alt="Build Status" src="https://travis-ci.org/oestrich/ex_venture.svg?branch=master" /></a></p>
-<p>A MUD written in Elixir</p>
+                <h1 id="setup">Setup</h1>
+<p>By the end of this guide you should have a working ExVenture development environment.</p>
 <h2 id="requirements">Requirements</h2>
-<ul>
-<li>PostgreSQL 9.6</li>
-<li>Elixir 1.6</li>
-<li>Erlang 20</li>
-<li>node.js 8.6</li>
-</ul>
-<h2 id="setup">Setup</h2>
-<pre><code class="bash">mix deps.get
-mix compile
-cd assets &amp;&amp; npm install &amp;&amp; node node_modules/brunch/bin/brunch build &amp;&amp; cd ..
-mix ecto.reset
-mix run --no-halt
+<h3 id="git">Git</h3>
+<p>You should install Git via your platform's package manager.</p>
+<h3 id="postgresql">PostgreSQL</h3>
+<p>You should install PostgreSQL via your platforms package manager or Postgres.app for Mac.</p>
+<p>Ubuntu:</p>
+<pre><code class="bash">sudo apt install postgresql
 </code></pre>
 
-<p>This will start a server on port 5555 that you can connect with using the <code>local.tin</code> tintin++ config. Ecto reset will include a sample area, classes, skills, and a login. You can also load <a href="http://localhost:4000/">http://localhost:4000/</a> in your browser for the admin panel and web client.</p>
-<h2 id="running-tests">Running Tests</h2>
+<p>For Arch, following the <a href="https://wiki.archlinux.org/index.php/PostgreSQL#Installing_PostgreSQL">wiki on installing PostgreSQL</a>.</p>
+<p>Ensure a superuser is enabled for your login name.</p>
+<pre><code class="bash">sudo -u postgres createuser --superuser `whoami`
+</code></pre>
+
+<h4 id="postgresql-authentication">PostgreSQL Authentication</h4>
+<p>By default ExVenture will try ident based authentication. You may need to alter your hba.config settings to allow this. This is <em>only</em> recommended for development.</p>
+<pre><code># IPv4 local connections:
+host    all             all             127.0.0.1/32            trust
+# IPv6 local connections:
+host    all             all             ::1/128                 trust
+</code></pre>
+
+<h3 id="elixir-erlang">Elixir / Erlang</h3>
+<p>The easiest way to get Erlang/Elixir going is to install <a href="https://github.com/asdf-vm/asdf">asdf</a>. You can follow their install guide on the <a href="https://github.com/asdf-vm/asdf#setup">README</a>. Below is the Ubuntu bash set up for reference.</p>
+<pre><code class="bash">git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
+echo -e '\n. $HOME/.asdf/asdf.sh' &gt;&gt; ~/.bashrc
+echo -e '\n. $HOME/.asdf/completions/asdf.bash' &gt;&gt; ~/.bashrc
+</code></pre>
+
+<p>After installing asdf make sure to reload your terminal by opening a new tab or sourcing your bashrc file again, <code>source ~/.bashrc</code>.</p>
+<p>Before installing Elixir you need to install Erlang. It may also require development headers to be in place depending on your system.</p>
+<p>Ubuntu (<a href="https://github.com/asdf-vm/asdf-erlang">taken from asdf-erlang</a>):</p>
+<pre><code class="bash">sudo apt install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-dev libgl1-mesa-dev libglu1-mesa-dev libpng3 libssh-dev unixodbc-dev
+</code></pre>
+
+<p>Install Erlang via <a href="https://github.com/asdf-vm/asdf-erlang">asdf</a>.</p>
+<pre><code class="bash">asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf install erlang 20.1
+asdf global erlang 20.1
+</code></pre>
+
+<p>Install Elixir via <a href="https://github.com/asdf-vm/asdf-elixir">asdf</a>.</p>
+<pre><code class="bash">asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf install elixir 1.5.2
+asdf global elixir 1.5.2
+mix local.hex
+mix local.rebar
+</code></pre>
+
+<h3 id="nodejs">node.js</h3>
+<p>Install node.js via <a href="https://github.com/asdf-vm/asdf-nodejs">asdf</a>.</p>
+<pre><code class="bash">asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+asdf install nodejs 8.8.1
+asdf global nodejs 8.8.1
+</code></pre>
+
+<p>You will also need python for node-sass:</p>
+<p>Ubuntu</p>
+<pre><code class="bash">sudo apt install python
+</code></pre>
+
+<h2 id="exventure">ExVenture</h2>
+<p>With requirements set up we can start to get ExVenture going. These commands will set up the elixir side:</p>
+<pre><code class="bash">git clone git@github.com:oestrich/ex_venture.git
+cd ex_venture
+mix deps.get
+mix compile
+</code></pre>
+
+<p>To get assets set up, which uses <a href="https://github.com/brunch/brunch">brunch</a>:</p>
+<pre><code class="bash">cd assets
+npm install
+node node_modules/brunch/bin/brunch build
+cd ..
+</code></pre>
+
+<p>Next get the database set up:</p>
+<pre><code class="bash">mix ecto.create
+mix ecto.migrate
+mix run priv/repo/seeds.exs
+</code></pre>
+
+<p>With that the app is up and running. You can boot it with:</p>
+<pre><code class="bash">mix run --no-halt
+</code></pre>
+
+<p>And connect via telnet on 5555 and via web on 4000. Both of these are configurable via the file <code>config/dev.exs</code>.</p>
+<p>If you have <a href="http://tintin.sourceforge.net/">tintin++</a> installed you can connect with:</p>
+<pre><code class="bash">tt++ -G local.tin
+</code></pre>
+
+<p>The <code>local.tin</code> tintin script sets up base GMCP and can turn debug mode on my removing a <code>nop</code> on <code>config {debug telnet} {on}</code>.</p>
+<h3 id="tests">Tests</h3>
+<p>To run tests you need to set up the test database first:</p>
 <pre><code class="bash">MIX_ENV=test mix ecto.create
 MIX_ENV=test mix ecto.migrate
 </code></pre>
 
-<h2 id="admin-panel">Admin Panel</h2>
-<p>There is an admin panel located at <a href="http://locahost:4000/admin">http://locahost:4000/admin</a> that you can build out the game in. Create zones, rooms, npcs, items, etc. in the panel. They will become live instantly on creating or updating.</p>
-<p><img alt="Admin Dashboard" src="https://oestrich.github.io/ex_venture/images/admin-dashboard.png" /></p>
-<h2 id="deployment">Deployment</h2>
-<p>Distillery is used to generate releases. Once a release is generated you can copy the tar file to the server and start it up.</p>
-<pre><code class="bash">cd assets &amp;&amp; node node_modules/brunch/bin/brunch build &amp;&amp; cd ..
-MIX_ENV=prod mix compile
-MIX_ENV=prod mix phx.digest
-MIX_ENV=prod mix release
+<p>Once that is in place you can run tests with:</p>
+<pre><code class="bash">mix test
 </code></pre>
-
-<p>The <code>release.sh</code> script will also do the same.</p>
-<h3 id="tls">TLS</h3>
-<p>The game does not support TLS natively, but you can get nginx to serve as a termination point and forward locally to the app. Nginx needs to be built with two modules, <a href="http://nginx.org/en/docs/stream/ngx_stream_core_module.html">stream_core</a> and <a href="http://nginx.org/en/docs/stream/ngx_stream_ssl_module.html">stream_ssl</a>. You will also need to set the <code>ssl_port</code> option in networking. By default it will load from the <code>SSL_PORT</code> ENV variable.</p>
-<pre><code class="nginx">stream {
-  upstream exventure {
-    server 127.0.0.1:5555;
-  }
-
-  server {
-    listen 5443 ssl;
-
-    # Copy in your main site's settings here
-    ssl_certificate /path/to/file.pem
-    ssl_certificate_key /path/to/file.key
-
-    proxy_pass exventure;
-  }
-}
-</code></pre>
-
-<h2 id="metrics">Metrics</h2>
-<p>Prometheus metrics are set up and will be reported on <code>/metrics</code>. You may want to have nginx deny requests to this endpoint or whitelist it for IPs, etc.</p>
-<h2 id="documentation">Documentation</h2>
-<p>You can get elixir docs by running <code>mix docs</code> and open <code>doc/index.html</code>. The code base has a lot of doctests to help give examples of how to use the functions.</p>
                 
                   
                 
@@ -541,14 +610,28 @@ MIX_ENV=prod mix release
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
         
-          <a href="setup/" title="Setup" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../admin/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Setup
+                Overview
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -582,9 +665,9 @@ MIX_ENV=prod mix release
       
     </div>
     
-      <script src="./assets/javascripts/application-84693e5e49.js"></script>
+      <script src="../assets/javascripts/application-84693e5e49.js"></script>
       
-      <script>app.initialize({version:"0.17.1",url:{base:"."}})</script>
+      <script>app.initialize({version:"0.17.1",url:{base:".."}})</script>
       
     
     

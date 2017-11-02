@@ -4,7 +4,15 @@
     
     <url>
      <loc>http://exventure.org/</loc>
-     <lastmod>2017-11-01</lastmod>
+     <lastmod>2017-11-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://exventure.org/setup/</loc>
+     <lastmod>2017-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,7 +21,7 @@
         
     <url>
      <loc>http://exventure.org/admin/</loc>
-     <lastmod>2017-11-01</lastmod>
+     <lastmod>2017-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -22,7 +30,7 @@
     
     <url>
      <loc>http://exventure.org/metrics/</loc>
-     <lastmod>2017-11-01</lastmod>
+     <lastmod>2017-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

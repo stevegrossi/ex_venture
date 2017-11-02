@@ -1,88 +1,138 @@
 {
     "docs": [
         {
-            "location": "/", 
-            "text": "ExVenture\n\n\n\n\nA MUD written in Elixir\n\n\nRequirements\n\n\n\n\nPostgreSQL 9.6\n\n\nElixir 1.6\n\n\nErlang 20\n\n\nnode.js 8.6\n\n\n\n\nSetup\n\n\nmix deps.get\nmix compile\ncd assets \n npm install \n node node_modules/brunch/bin/brunch build \n cd ..\nmix ecto.reset\nmix run --no-halt\n\n\n\n\nThis will start a server on port 5555 that you can connect with using the \nlocal.tin\n tintin++ config. Ecto reset will include a sample area, classes, skills, and a login. You can also load \nhttp://localhost:4000/\n in your browser for the admin panel and web client.\n\n\nRunning Tests\n\n\nMIX_ENV=test mix ecto.create\nMIX_ENV=test mix ecto.migrate\n\n\n\n\nAdmin Panel\n\n\nThere is an admin panel located at \nhttp://locahost:4000/admin\n that you can build out the game in. Create zones, rooms, npcs, items, etc. in the panel. They will become live instantly on creating or updating.\n\n\n\n\nDeployment\n\n\nDistillery is used to generate releases. Once a release is generated you can copy the tar file to the server and start it up.\n\n\ncd assets \n node node_modules/brunch/bin/brunch build \n cd ..\nMIX_ENV=prod mix compile\nMIX_ENV=prod mix phx.digest\nMIX_ENV=prod mix release\n\n\n\n\nThe \nrelease.sh\n script will also do the same.\n\n\nTLS\n\n\nThe game does not support TLS natively, but you can get nginx to serve as a termination point and forward locally to the app. Nginx needs to be built with two modules, \nstream_core\n and \nstream_ssl\n. You will also need to set the \nssl_port\n option in networking. By default it will load from the \nSSL_PORT\n ENV variable.\n\n\nstream {\n  upstream exventure {\n    server 127.0.0.1:5555;\n  }\n\n  server {\n    listen 5443 ssl;\n\n    # Copy in your main site's settings here\n    ssl_certificate /path/to/file.pem\n    ssl_certificate_key /path/to/file.key\n\n    proxy_pass exventure;\n  }\n}\n\n\n\n\nMetrics\n\n\nPrometheus metrics are set up and will be reported on \n/metrics\n. You may want to have nginx deny requests to this endpoint or whitelist it for IPs, etc.\n\n\nDocumentation\n\n\nYou can get elixir docs by running \nmix docs\n and open \ndoc/index.html\n. The code base has a lot of doctests to help give examples of how to use the functions.", 
+            "location": "/",
+            "text": "ExVenture\n\n\n\n\nA MUD written in Elixir\n\n\nRequirements\n\n\n\n\nPostgreSQL 9.6\n\n\nElixir 1.6\n\n\nErlang 20\n\n\nnode.js 8.6\n\n\n\n\nSetup\n\n\nmix deps.get\nmix compile\ncd assets && npm install && node node_modules/brunch/bin/brunch build && cd ..\nmix ecto.reset\nmix run --no-halt\n\n\n\n\nThis will start a server on port 5555 that you can connect with using the \nlocal.tin\n tintin++ config. Ecto reset will include a sample area, classes, skills, and a login. You can also load \nhttp://localhost:4000/\n in your browser for the admin panel and web client.\n\n\nRunning Tests\n\n\nMIX_ENV=test mix ecto.create\nMIX_ENV=test mix ecto.migrate\n\n\n\n\nAdmin Panel\n\n\nThere is an admin panel located at \nhttp://locahost:4000/admin\n that you can build out the game in. Create zones, rooms, npcs, items, etc. in the panel. They will become live instantly on creating or updating.\n\n\n\n\nDeployment\n\n\nDistillery is used to generate releases. Once a release is generated you can copy the tar file to the server and start it up.\n\n\ncd assets && node node_modules/brunch/bin/brunch build && cd ..\nMIX_ENV=prod mix compile\nMIX_ENV=prod mix phx.digest\nMIX_ENV=prod mix release\n\n\n\n\nThe \nrelease.sh\n script will also do the same.\n\n\nTLS\n\n\nThe game does not support TLS natively, but you can get nginx to serve as a termination point and forward locally to the app. Nginx needs to be built with two modules, \nstream_core\n and \nstream_ssl\n. You will also need to set the \nssl_port\n option in networking. By default it will load from the \nSSL_PORT\n ENV variable.\n\n\nstream {\n  upstream exventure {\n    server 127.0.0.1:5555;\n  }\n\n  server {\n    listen 5443 ssl;\n\n    # Copy in your main site's settings here\n    ssl_certificate /path/to/file.pem\n    ssl_certificate_key /path/to/file.key\n\n    proxy_pass exventure;\n  }\n}\n\n\n\n\nMetrics\n\n\nPrometheus metrics are set up and will be reported on \n/metrics\n. You may want to have nginx deny requests to this endpoint or whitelist it for IPs, etc.\n\n\nDocumentation\n\n\nYou can get elixir docs by running \nmix docs\n and open \ndoc/index.html\n. The code base has a lot of doctests to help give examples of how to use the functions.",
             "title": "Home"
-        }, 
+        },
         {
-            "location": "/#exventure", 
-            "text": "A MUD written in Elixir", 
+            "location": "/#exventure",
+            "text": "A MUD written in Elixir",
             "title": "ExVenture"
-        }, 
+        },
         {
-            "location": "/#requirements", 
-            "text": "PostgreSQL 9.6  Elixir 1.6  Erlang 20  node.js 8.6", 
+            "location": "/#requirements",
+            "text": "PostgreSQL 9.6  Elixir 1.6  Erlang 20  node.js 8.6",
             "title": "Requirements"
-        }, 
+        },
         {
-            "location": "/#setup", 
-            "text": "mix deps.get\nmix compile\ncd assets   npm install   node node_modules/brunch/bin/brunch build   cd ..\nmix ecto.reset\nmix run --no-halt  This will start a server on port 5555 that you can connect with using the  local.tin  tintin++ config. Ecto reset will include a sample area, classes, skills, and a login. You can also load  http://localhost:4000/  in your browser for the admin panel and web client.", 
+            "location": "/#setup",
+            "text": "mix deps.get\nmix compile\ncd assets && npm install && node node_modules/brunch/bin/brunch build && cd ..\nmix ecto.reset\nmix run --no-halt  This will start a server on port 5555 that you can connect with using the  local.tin  tintin++ config. Ecto reset will include a sample area, classes, skills, and a login. You can also load  http://localhost:4000/  in your browser for the admin panel and web client.",
             "title": "Setup"
-        }, 
+        },
         {
-            "location": "/#running-tests", 
-            "text": "MIX_ENV=test mix ecto.create\nMIX_ENV=test mix ecto.migrate", 
+            "location": "/#running-tests",
+            "text": "MIX_ENV=test mix ecto.create\nMIX_ENV=test mix ecto.migrate",
             "title": "Running Tests"
-        }, 
+        },
         {
-            "location": "/#admin-panel", 
-            "text": "There is an admin panel located at  http://locahost:4000/admin  that you can build out the game in. Create zones, rooms, npcs, items, etc. in the panel. They will become live instantly on creating or updating.", 
+            "location": "/#admin-panel",
+            "text": "There is an admin panel located at  http://locahost:4000/admin  that you can build out the game in. Create zones, rooms, npcs, items, etc. in the panel. They will become live instantly on creating or updating.",
             "title": "Admin Panel"
-        }, 
+        },
         {
-            "location": "/#deployment", 
-            "text": "Distillery is used to generate releases. Once a release is generated you can copy the tar file to the server and start it up.  cd assets   node node_modules/brunch/bin/brunch build   cd ..\nMIX_ENV=prod mix compile\nMIX_ENV=prod mix phx.digest\nMIX_ENV=prod mix release  The  release.sh  script will also do the same.", 
+            "location": "/#deployment",
+            "text": "Distillery is used to generate releases. Once a release is generated you can copy the tar file to the server and start it up.  cd assets && node node_modules/brunch/bin/brunch build && cd ..\nMIX_ENV=prod mix compile\nMIX_ENV=prod mix phx.digest\nMIX_ENV=prod mix release  The  release.sh  script will also do the same.",
             "title": "Deployment"
-        }, 
+        },
         {
-            "location": "/#tls", 
-            "text": "The game does not support TLS natively, but you can get nginx to serve as a termination point and forward locally to the app. Nginx needs to be built with two modules,  stream_core  and  stream_ssl . You will also need to set the  ssl_port  option in networking. By default it will load from the  SSL_PORT  ENV variable.  stream {\n  upstream exventure {\n    server 127.0.0.1:5555;\n  }\n\n  server {\n    listen 5443 ssl;\n\n    # Copy in your main site's settings here\n    ssl_certificate /path/to/file.pem\n    ssl_certificate_key /path/to/file.key\n\n    proxy_pass exventure;\n  }\n}", 
+            "location": "/#tls",
+            "text": "The game does not support TLS natively, but you can get nginx to serve as a termination point and forward locally to the app. Nginx needs to be built with two modules,  stream_core  and  stream_ssl . You will also need to set the  ssl_port  option in networking. By default it will load from the  SSL_PORT  ENV variable.  stream {\n  upstream exventure {\n    server 127.0.0.1:5555;\n  }\n\n  server {\n    listen 5443 ssl;\n\n    # Copy in your main site's settings here\n    ssl_certificate /path/to/file.pem\n    ssl_certificate_key /path/to/file.key\n\n    proxy_pass exventure;\n  }\n}",
             "title": "TLS"
-        }, 
+        },
         {
-            "location": "/#metrics", 
-            "text": "Prometheus metrics are set up and will be reported on  /metrics . You may want to have nginx deny requests to this endpoint or whitelist it for IPs, etc.", 
+            "location": "/#metrics",
+            "text": "Prometheus metrics are set up and will be reported on  /metrics . You may want to have nginx deny requests to this endpoint or whitelist it for IPs, etc.",
             "title": "Metrics"
-        }, 
+        },
         {
-            "location": "/#documentation", 
-            "text": "You can get elixir docs by running  mix docs  and open  doc/index.html . The code base has a lot of doctests to help give examples of how to use the functions.", 
+            "location": "/#documentation",
+            "text": "You can get elixir docs by running  mix docs  and open  doc/index.html . The code base has a lot of doctests to help give examples of how to use the functions.",
             "title": "Documentation"
-        }, 
+        },
         {
-            "location": "/admin/", 
-            "text": "Admin Panel\n\n\nThe admin panel is available at \n/admin\n, you must be flagged as an admin to view anything in it. You can sign in via the regular sign in form or the admin specific form. You can make your user an admin by doing the following in an IEx console:\n\n\nuser = Data.Repo.get_by(Data.User, name: \nyourname\n)\nuser |\n Data.User.changeset(%{flags: [\nadmin\n]}) |\n Data.Repo.update()\n\n\n\n\nDashboard\n\n\n\n\nThe dashboard has a few counters for users, items, zones, and rooms. It also has a panel showing the currently connected users, which you can teleport your user to.", 
+            "location": "/setup/",
+            "text": "Setup\n\n\nBy the end of this guide you should have a working ExVenture development environment.\n\n\nRequirements\n\n\nGit\n\n\nYou should install Git via your platform's package manager.\n\n\nPostgreSQL\n\n\nYou should install PostgreSQL via your platforms package manager or Postgres.app for Mac.\n\n\nUbuntu:\n\n\nsudo apt install postgresql\n\n\n\n\nFor Arch, following the \nwiki on installing PostgreSQL\n.\n\n\nEnsure a superuser is enabled for your login name.\n\n\nsudo -u postgres createuser --superuser `whoami`\n\n\n\n\nPostgreSQL Authentication\n\n\nBy default ExVenture will try ident based authentication. You may need to alter your hba.config settings to allow this. This is \nonly\n recommended for development.\n\n\n# IPv4 local connections:\nhost    all             all             127.0.0.1/32            trust\n# IPv6 local connections:\nhost    all             all             ::1/128                 trust\n\n\n\n\nElixir / Erlang\n\n\nThe easiest way to get Erlang/Elixir going is to install \nasdf\n. You can follow their install guide on the \nREADME\n. Below is the Ubuntu bash set up for reference.\n\n\ngit clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0\necho -e '\\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc\necho -e '\\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc\n\n\n\n\nAfter installing asdf make sure to reload your terminal by opening a new tab or sourcing your bashrc file again, \nsource ~/.bashrc\n.\n\n\nBefore installing Elixir you need to install Erlang. It may also require development headers to be in place depending on your system.\n\n\nUbuntu (\ntaken from asdf-erlang\n):\n\n\nsudo apt install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-dev libgl1-mesa-dev libglu1-mesa-dev libpng3 libssh-dev unixodbc-dev\n\n\n\n\nInstall Erlang via \nasdf\n.\n\n\nasdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git\nasdf install erlang 20.1\nasdf global erlang 20.1\n\n\n\n\nInstall Elixir via \nasdf\n.\n\n\nasdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git\nasdf install elixir 1.5.2\nasdf global elixir 1.5.2\nmix local.hex\nmix local.rebar\n\n\n\n\nnode.js\n\n\nInstall node.js via \nasdf\n.\n\n\nasdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git\nbash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring\nasdf install nodejs 8.8.1\nasdf global nodejs 8.8.1\n\n\n\n\nYou will also need python for node-sass:\n\n\nUbuntu\n\n\nsudo apt install python\n\n\n\n\nExVenture\n\n\nWith requirements set up we can start to get ExVenture going. These commands will set up the elixir side:\n\n\ngit clone git@github.com:oestrich/ex_venture.git\ncd ex_venture\nmix deps.get\nmix compile\n\n\n\n\nTo get assets set up, which uses \nbrunch\n:\n\n\ncd assets\nnpm install\nnode node_modules/brunch/bin/brunch build\ncd ..\n\n\n\n\nNext get the database set up:\n\n\nmix ecto.create\nmix ecto.migrate\nmix run priv/repo/seeds.exs\n\n\n\n\nWith that the app is up and running. You can boot it with:\n\n\nmix run --no-halt\n\n\n\n\nAnd connect via telnet on 5555 and via web on 4000. Both of these are configurable via the file \nconfig/dev.exs\n.\n\n\nIf you have \ntintin++\n installed you can connect with:\n\n\ntt++ -G local.tin\n\n\n\n\nThe \nlocal.tin\n tintin script sets up base GMCP and can turn debug mode on my removing a \nnop\n on \nconfig {debug telnet} {on}\n.\n\n\nTests\n\n\nTo run tests you need to set up the test database first:\n\n\nMIX_ENV=test mix ecto.create\nMIX_ENV=test mix ecto.migrate\n\n\n\n\nOnce that is in place you can run tests with:\n\n\nmix test",
+            "title": "Setup"
+        },
+        {
+            "location": "/setup/#setup",
+            "text": "By the end of this guide you should have a working ExVenture development environment.",
+            "title": "Setup"
+        },
+        {
+            "location": "/setup/#requirements",
+            "text": "",
+            "title": "Requirements"
+        },
+        {
+            "location": "/setup/#git",
+            "text": "You should install Git via your platform's package manager.",
+            "title": "Git"
+        },
+        {
+            "location": "/setup/#postgresql",
+            "text": "You should install PostgreSQL via your platforms package manager or Postgres.app for Mac.  Ubuntu:  sudo apt install postgresql  For Arch, following the  wiki on installing PostgreSQL .  Ensure a superuser is enabled for your login name.  sudo -u postgres createuser --superuser `whoami`",
+            "title": "PostgreSQL"
+        },
+        {
+            "location": "/setup/#postgresql-authentication",
+            "text": "By default ExVenture will try ident based authentication. You may need to alter your hba.config settings to allow this. This is  only  recommended for development.  # IPv4 local connections:\nhost    all             all             127.0.0.1/32            trust\n# IPv6 local connections:\nhost    all             all             ::1/128                 trust",
+            "title": "PostgreSQL Authentication"
+        },
+        {
+            "location": "/setup/#elixir-erlang",
+            "text": "The easiest way to get Erlang/Elixir going is to install  asdf . You can follow their install guide on the  README . Below is the Ubuntu bash set up for reference.  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0\necho -e '\\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc\necho -e '\\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc  After installing asdf make sure to reload your terminal by opening a new tab or sourcing your bashrc file again,  source ~/.bashrc .  Before installing Elixir you need to install Erlang. It may also require development headers to be in place depending on your system.  Ubuntu ( taken from asdf-erlang ):  sudo apt install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-dev libgl1-mesa-dev libglu1-mesa-dev libpng3 libssh-dev unixodbc-dev  Install Erlang via  asdf .  asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git\nasdf install erlang 20.1\nasdf global erlang 20.1  Install Elixir via  asdf .  asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git\nasdf install elixir 1.5.2\nasdf global elixir 1.5.2\nmix local.hex\nmix local.rebar",
+            "title": "Elixir / Erlang"
+        },
+        {
+            "location": "/setup/#nodejs",
+            "text": "Install node.js via  asdf .  asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git\nbash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring\nasdf install nodejs 8.8.1\nasdf global nodejs 8.8.1  You will also need python for node-sass:  Ubuntu  sudo apt install python",
+            "title": "node.js"
+        },
+        {
+            "location": "/setup/#exventure",
+            "text": "With requirements set up we can start to get ExVenture going. These commands will set up the elixir side:  git clone git@github.com:oestrich/ex_venture.git\ncd ex_venture\nmix deps.get\nmix compile  To get assets set up, which uses  brunch :  cd assets\nnpm install\nnode node_modules/brunch/bin/brunch build\ncd ..  Next get the database set up:  mix ecto.create\nmix ecto.migrate\nmix run priv/repo/seeds.exs  With that the app is up and running. You can boot it with:  mix run --no-halt  And connect via telnet on 5555 and via web on 4000. Both of these are configurable via the file  config/dev.exs .  If you have  tintin++  installed you can connect with:  tt++ -G local.tin  The  local.tin  tintin script sets up base GMCP and can turn debug mode on my removing a  nop  on  config {debug telnet} {on} .",
+            "title": "ExVenture"
+        },
+        {
+            "location": "/setup/#tests",
+            "text": "To run tests you need to set up the test database first:  MIX_ENV=test mix ecto.create\nMIX_ENV=test mix ecto.migrate  Once that is in place you can run tests with:  mix test",
+            "title": "Tests"
+        },
+        {
+            "location": "/admin/",
+            "text": "Admin Panel\n\n\nThe admin panel is available at \n/admin\n, you must be flagged as an admin to view anything in it. You can sign in via the regular sign in form or the admin specific form. You can make your user an admin by doing the following in an IEx console:\n\n\nuser = Data.Repo.get_by(Data.User, name: \"yourname\")\nuser |> Data.User.changeset(%{flags: [\"admin\"]}) |> Data.Repo.update()\n\n\n\n\nDashboard\n\n\n\n\nThe dashboard has a few counters for users, items, zones, and rooms. It also has a panel showing the currently connected users, which you can teleport your user to.",
             "title": "Overview"
-        }, 
+        },
         {
-            "location": "/admin/#admin-panel", 
-            "text": "The admin panel is available at  /admin , you must be flagged as an admin to view anything in it. You can sign in via the regular sign in form or the admin specific form. You can make your user an admin by doing the following in an IEx console:  user = Data.Repo.get_by(Data.User, name:  yourname )\nuser |  Data.User.changeset(%{flags: [ admin ]}) |  Data.Repo.update()", 
+            "location": "/admin/#admin-panel",
+            "text": "The admin panel is available at  /admin , you must be flagged as an admin to view anything in it. You can sign in via the regular sign in form or the admin specific form. You can make your user an admin by doing the following in an IEx console:  user = Data.Repo.get_by(Data.User, name: \"yourname\")\nuser |> Data.User.changeset(%{flags: [\"admin\"]}) |> Data.Repo.update()",
             "title": "Admin Panel"
-        }, 
+        },
         {
-            "location": "/admin/#dashboard", 
-            "text": "The dashboard has a few counters for users, items, zones, and rooms. It also has a panel showing the currently connected users, which you can teleport your user to.", 
+            "location": "/admin/#dashboard",
+            "text": "The dashboard has a few counters for users, items, zones, and rooms. It also has a panel showing the currently connected users, which you can teleport your user to.",
             "title": "Dashboard"
-        }, 
+        },
         {
-            "location": "/metrics/", 
-            "text": "Metrics\n\n\nExVenture publishes \nPrometheus\n metrics at \n/metrics\n.\n\n\nnginx\n\n\nThe metrics endpoint will be public to the internet unless it is specifically denied. Here is sample nginx config that allows a single private IP to view the metrics page:\n\n\nlocation /metrics {\n  set $metrics 1;\n\n  if ($remote_addr = 192.168.x.x) {\n    set $metrics 0;\n  }\n\n  if ($metrics) {\n    return 403;\n  }\n\n  proxy_pass   http://127.0.0.1:4000;\n}\n\n\n\n\nGrafana\n\n\n\n\nThis is a sample Grafana dashboard showcasing the metrics that are available.", 
+            "location": "/metrics/",
+            "text": "Metrics\n\n\nExVenture publishes \nPrometheus\n metrics at \n/metrics\n.\n\n\nnginx\n\n\nThe metrics endpoint will be public to the internet unless it is specifically denied. Here is sample nginx config that allows a single private IP to view the metrics page:\n\n\nlocation /metrics {\n  set $metrics 1;\n\n  if ($remote_addr = 192.168.x.x) {\n    set $metrics 0;\n  }\n\n  if ($metrics) {\n    return 403;\n  }\n\n  proxy_pass   http://127.0.0.1:4000;\n}\n\n\n\n\nGrafana\n\n\n\n\nThis is a sample Grafana dashboard showcasing the metrics that are available.",
             "title": "Metrics"
-        }, 
+        },
         {
-            "location": "/metrics/#metrics", 
-            "text": "ExVenture publishes  Prometheus  metrics at  /metrics .", 
+            "location": "/metrics/#metrics",
+            "text": "ExVenture publishes  Prometheus  metrics at  /metrics .",
             "title": "Metrics"
-        }, 
+        },
         {
-            "location": "/metrics/#nginx", 
-            "text": "The metrics endpoint will be public to the internet unless it is specifically denied. Here is sample nginx config that allows a single private IP to view the metrics page:  location /metrics {\n  set $metrics 1;\n\n  if ($remote_addr = 192.168.x.x) {\n    set $metrics 0;\n  }\n\n  if ($metrics) {\n    return 403;\n  }\n\n  proxy_pass   http://127.0.0.1:4000;\n}", 
+            "location": "/metrics/#nginx",
+            "text": "The metrics endpoint will be public to the internet unless it is specifically denied. Here is sample nginx config that allows a single private IP to view the metrics page:  location /metrics {\n  set $metrics 1;\n\n  if ($remote_addr = 192.168.x.x) {\n    set $metrics 0;\n  }\n\n  if ($metrics) {\n    return 403;\n  }\n\n  proxy_pass   http://127.0.0.1:4000;\n}",
             "title": "nginx"
-        }, 
+        },
         {
-            "location": "/metrics/#grafana", 
-            "text": "This is a sample Grafana dashboard showcasing the metrics that are available.", 
+            "location": "/metrics/#grafana",
+            "text": "This is a sample Grafana dashboard showcasing the metrics that are available.",
             "title": "Grafana"
         }
     ]
