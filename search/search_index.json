@@ -51,6 +51,21 @@
             "title": "Documentation"
         }, 
         {
+            "location": "/admin/", 
+            "text": "Admin Panel\n\n\nThe admin panel is available at \n/admin\n, you must be flagged as an admin to view anything in it. You can sign in via the regular sign in form or the admin specific form. You can make your user an admin by doing the following in an IEx console:\n\n\nuser = Data.Repo.get_by(Data.User, name: \nyourname\n)\nuser |\n Data.User.changeset(%{flags: [\nadmin\n]}) |\n Data.Repo.update()\n\n\n\n\nDashboard\n\n\n\n\nThe dashboard has a few counters for users, items, zones, and rooms. It also has a panel showing the currently connected users, which you can teleport your user to.", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/admin/#admin-panel", 
+            "text": "The admin panel is available at  /admin , you must be flagged as an admin to view anything in it. You can sign in via the regular sign in form or the admin specific form. You can make your user an admin by doing the following in an IEx console:  user = Data.Repo.get_by(Data.User, name:  yourname )\nuser |  Data.User.changeset(%{flags: [ admin ]}) |  Data.Repo.update()", 
+            "title": "Admin Panel"
+        }, 
+        {
+            "location": "/admin/#dashboard", 
+            "text": "The dashboard has a few counters for users, items, zones, and rooms. It also has a panel showing the currently connected users, which you can teleport your user to.", 
+            "title": "Dashboard"
+        }, 
+        {
             "location": "/metrics/", 
             "text": "Metrics\n\n\nExVenture publishes \nPrometheus\n metrics at \n/metrics\n.\n\n\nnginx\n\n\nThe metrics endpoint will be public to the internet unless it is specifically denied. Here is sample nginx config that allows a single private IP to view the metrics page:\n\n\nlocation /metrics {\n  set $metrics 1;\n\n  if ($remote_addr = 192.168.x.x) {\n    set $metrics 0;\n  }\n\n  if ($metrics) {\n    return 403;\n  }\n\n  proxy_pass   http://127.0.0.1:4000;\n}\n\n\n\n\nGrafana\n\n\n\n\nThis is a sample Grafana dashboard showcasing the metrics that are available.", 
             "title": "Metrics"

@@ -13,7 +13,7 @@
         <meta name="description" content="A MUD built with Elixir">
       
       
-        <link rel="canonical" href="http://exventure.org/metrics/">
+        <link rel="canonical" href="http://exventure.org/admin/">
       
       
         <meta name="author" content="Eric Oestrich">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Metrics - ExVenture</title>
+        <title>Overview - ExVenture</title>
       
     
     
@@ -97,8 +97,12 @@
           
             
               
+                <span class="md-header-nav__parent">
+                  Admin
+                </span>
+              
             
-            Metrics
+            Overview
           
         </span>
       </div>
@@ -218,10 +222,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Admin
@@ -237,23 +243,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../admin/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -265,11 +254,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Metrics
+        Overview
       </label>
     
-    <a href="./" title="Metrics" class="md-nav__link md-nav__link--active">
-      Metrics
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+      Overview
     </a>
     
       
@@ -283,15 +272,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nginx" title="nginx" class="md-nav__link">
-    nginx
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana" title="Grafana" class="md-nav__link">
-    Grafana
+  <a href="#dashboard" title="Dashboard" class="md-nav__link">
+    Dashboard
   </a>
   
 </li>
@@ -302,6 +284,23 @@
   
 </nav>
     
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/" title="Metrics" class="md-nav__link">
+      Metrics
+    </a>
   </li>
 
     
@@ -326,15 +325,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nginx" title="nginx" class="md-nav__link">
-    nginx
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana" title="Grafana" class="md-nav__link">
-    Grafana
+  <a href="#dashboard" title="Dashboard" class="md-nav__link">
+    Dashboard
   </a>
   
 </li>
@@ -353,31 +345,18 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/oestrich/ex_venture/edit/master/docs/metrics.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/oestrich/ex_venture/edit/master/docs/admin/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="metrics">Metrics</h1>
-<p>ExVenture publishes <a href="https://prometheus.io/">Prometheus</a> metrics at <code>/metrics</code>.</p>
-<h2 id="nginx">nginx</h2>
-<p>The metrics endpoint will be public to the internet unless it is specifically denied. Here is sample nginx config that allows a single private IP to view the metrics page:</p>
-<pre><code class="nginx">location /metrics {
-  set $metrics 1;
-
-  if ($remote_addr = 192.168.x.x) {
-    set $metrics 0;
-  }
-
-  if ($metrics) {
-    return 403;
-  }
-
-  proxy_pass   http://127.0.0.1:4000;
-}
+                <h1 id="admin-panel">Admin Panel</h1>
+<p>The admin panel is available at <code>/admin</code>, you must be flagged as an admin to view anything in it. You can sign in via the regular sign in form or the admin specific form. You can make your user an admin by doing the following in an IEx console:</p>
+<pre><code class="elixir">user = Data.Repo.get_by(Data.User, name: &quot;yourname&quot;)
+user |&gt; Data.User.changeset(%{flags: [&quot;admin&quot;]}) |&gt; Data.Repo.update()
 </code></pre>
 
-<h2 id="grafana">Grafana</h2>
-<p><img alt="Metrics" src="../images/metrics.png" /></p>
-<p>This is a sample Grafana dashboard showcasing the metrics that are available.</p>
+<h2 id="dashboard">Dashboard</h2>
+<p><img alt="Admin Dashboard" src="../images/admin-dashboard.png" /></p>
+<p>The dashboard has a few counters for users, items, zones, and rooms. It also has a panel showing the currently connected users, which you can teleport your user to.</p>
                 
                   
                 
@@ -396,7 +375,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../admin/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -405,11 +384,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Overview
+                Home
               </span>
             </div>
           </a>
         
+        
+          <a href="../metrics/" title="Metrics" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Metrics
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
